@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yaawo — Pitch Commercial</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Variables ─────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --black:   #050505;
+  --white:   #F8F6F1;
+  --blue:    #0A5FFF;
+  --blue-lt: #3D7FFF;
+  --sand:    #E8DCC8;
+  --ink:     #1A1A1A;
+  --muted:   #6B6560;
+  --border:  rgba(0,0,0,0.08);
+
+  --f-head: 'Syne', sans-serif;
+  --f-body: 'DM Sans', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-xl: 48px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-body);
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Utility ───────────────────────────────────────────────── */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+.label {
+  font-family: var(--f-head);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* ── NAV ───────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(248,246,241,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--f-head);
+  font-size: 22px; font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+}
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 500; color: var(--muted);
+  text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-cta {
+  background: var(--blue); color: #fff;
+  border: none; padding: 10px 22px;
+  border-radius: var(--radius-xl); font-family: var(--f-body);
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: background .2s, transform .15s;
+}
+.nav-cta:hover { background: var(--blue-lt); transform: translateY(-1px); }
+
+/* ── HERO ──────────────────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 64px;
+  padding: 140px 48px 80px;
+  background: var(--black);
+  position: relative; overflow: hidden;
+}
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 70% 40%, #0A3FCC18 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+
+.hero-text { position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(10,95,255,0.15); border: 1px solid rgba(10,95,255,0.3);
+  border-radius: var(--radius-xl); padding: 6px 14px;
+  font-size: 12px; font-weight: 600; color: #7EB3FF;
+  letter-spacing: 0.05em; margin-bottom: 32px;
+}
+.hero-badge::before {
+  content: ''; width: 7px; height: 7px; border-radius: 50%;
+  background: #3D7FFF;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50%      { opacity:.5; transform:scale(1.3); }
+}
+.hero-title {
+  font-family: var(--f-head);
+  font-size: clamp(52px, 6vw, 84px);
+  font-weight: 800; line-height: .95;
+  letter-spacing: -0.04em;
+  color: #F8F6F1;
+}
+.hero-title .accent { color: var(--blue-lt); }
+.hero-subtitle {
+  font-size: 17px; font-weight: 300; color: rgba(248,246,241,0.5);
+  margin-top: 24px; line-height: 1.65; max-width: 440px;
+}
+.hero-actions { display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--blue); color: #fff;
+  padding: 16px 32px; border-radius: var(--radius-xl);
+  font-family: var(--f-body); font-size: 15px; font-weight: 500;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-primary:hover { background: var(--blue-lt); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,95,255,0.35); }
+.btn-outline {
+  background: transparent; color: rgba(248,246,241,0.7);
+  padding: 16px 32px; border-radius: var(--radius-xl);
+  font-family: var(--f-body); font-size: 15px; font-weight: 500;
+  border: 1px solid rgba(248,246,241,0.15); cursor: pointer; text-decoration: none;
+  transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-outline:hover { border-color: rgba(248,246,241,0.4); color: #F8F6F1; }
+
+.hero-stats {
+  display: flex; gap: 40px; margin-top: 56px;
+  padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.07);
+}
+.hero-stat-num {
+  font-family: var(--f-head);
+  font-size: 36px; font-weight: 800; color: #F8F6F1;
+  letter-spacing: -0.03em;
+}
+.hero-stat-num span { color: var(--blue-lt); }
+.hero-stat-label { font-size: 12px; color: rgba(248,246,241,0.4); margin-top: 4px; letter-spacing: 0.04em; }
+
+/* Phone mockup */
+.hero-phone {
+  position: relative; z-index: 2;
+  display: flex; justify-content: center; align-items: center;
+}
+.phone-frame {
+  width: 280px; height: 560px;
+  background: #111;
+  border-radius: 44px;
+  border: 2px solid rgba(255,255,255,0.12);
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+}
+.phone-notch {
+  width: 100px; height: 28px;
+  background: #000; border-radius: 0 0 20px 20px;
+  margin: 0 auto;
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  z-index: 5;
+}
+.phone-screen {
+  position: absolute; inset: 0;
+  background: #050505;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.phone-map {
+  height: 50%;
+  background:
+    linear-gradient(180deg, transparent 60%, #050505 100%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 48px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 48px),
+    #0a1628;
+  position: relative;
+}
+.phone-map-roads {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.06) 40.5%, rgba(255,255,255,0.06) 41%, transparent 41.5%),
+    linear-gradient(-20deg, transparent 30%, rgba(255,255,255,0.05) 30.5%, rgba(255,255,255,0.05) 31%, transparent 31.5%),
+    linear-gradient(80deg, transparent 50%, rgba(255,255,255,0.07) 50.5%, rgba(255,255,255,0.07) 51%, transparent 51.5%);
+}
+.phone-pin {
+  position: absolute;
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  display: flex; align-items: center; justify-content: center;
+}
+.phone-pin.blue { background: #0A5FFF; top: 35%; left: 48%; box-shadow: 0 0 12px rgba(10,95,255,0.6); }
+.phone-pin.green { background: #22C55E; top: 55%; left: 62%; box-shadow: 0 0 10px rgba(34,197,94,0.5); }
+.phone-pin.red { background: #EF4444; top: 25%; left: 30%; box-shadow: 0 0 10px rgba(239,68,68,0.5); }
+.phone-pin-dot { width: 6px; height: 6px; border-radius: 50%; background: #fff; }
+.phone-user {
+  position: absolute; top: 42%; left: 44%;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: #3D7FFF; border: 2px solid #fff;
+  box-shadow: 0 0 0 6px rgba(61,127,255,0.2);
+}
+
+.phone-content { flex: 1; padding: 16px; }
+.phone-cta {
+  background: rgba(10,95,255,0.15); border: 1px solid rgba(10,95,255,0.3);
+  border-radius: 14px; padding: 12px 14px;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 12px;
+}
+.phone-cta-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(10,95,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+}
+.phone-cta-t1 { font-size: 11px; font-weight: 600; color: #F8F6F1; }
+.phone-cta-t2 { font-size: 9px; color: rgba(248,246,241,0.4); margin-top: 2px; }
+.phone-places { display: flex; flex-direction: column; gap: 6px; }
+.phone-place {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px; padding: 8px 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.phone-place-bar { width: 3px; height: 28px; border-radius: 2px; }
+.phone-place-name { font-size: 9px; font-weight: 600; color: #F8F6F1; }
+.phone-place-type { font-size: 8px; color: rgba(248,246,241,0.35); margin-top: 2px; }
+.phone-tab-bar {
+  display: flex; border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 10px 0 14px;
+  background: rgba(0,0,0,0.6);
+}
+.phone-tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.phone-tab-icon { font-size: 14px; }
+.phone-tab-label { font-size: 7px; color: rgba(248,246,241,0.3); }
+.phone-tab.active .phone-tab-label { color: var(--blue-lt); }
+
+/* Floating glow */
+.phone-glow {
+  position: absolute;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(10,95,255,0.15) 0%, transparent 70%);
+  top: 50%; left: 50%; transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ── SECTION STYLES ────────────────────────────────────────── */
+section { padding: 120px 0; }
+section:nth-child(even) { background: var(--white); }
+section:nth-child(odd):not(#hero) { background: #F2EEE7; }
+
+.section-header { text-align: center; margin-bottom: 80px; }
+.section-title {
+  font-family: var(--f-head);
+  font-size: clamp(36px, 4.5vw, 58px);
+  font-weight: 800; letter-spacing: -0.03em;
+  color: var(--ink); line-height: 1;
+  margin-top: 16px;
+}
+.section-sub {
+  font-size: 17px; color: var(--muted); font-weight: 300;
+  margin-top: 20px; max-width: 540px; margin-left: auto; margin-right: auto;
+  line-height: 1.65;
+}
+
+/* ── PROBLEM SECTION ───────────────────────────────────────── */
+#problem {
+  background: var(--black) !important;
+  padding: 120px 48px;
+}
+#problem .section-title { color: #F8F6F1; }
+#problem .section-sub { color: rgba(248,246,241,0.45); }
+#problem .label { color: rgba(61,127,255,0.9); }
+
+.problem-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 960px; margin: 0 auto;
+}
+.problem-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg); padding: 36px 32px;
+  transition: border-color .3s;
+}
+.problem-card:hover { border-color: rgba(10,95,255,0.4); }
+.problem-icon {
+  width: 52px; height: 52px; border-radius: 16px;
+  background: rgba(10,95,255,0.12); border: 1px solid rgba(10,95,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; margin-bottom: 24px;
+}
+.problem-num {
+  font-family: var(--f-head); font-size: 11px; font-weight: 700;
+  color: rgba(10,95,255,0.6); letter-spacing: 0.1em; margin-bottom: 8px;
+}
+.problem-title { font-family: var(--f-head); font-size: 20px; font-weight: 700; color: #F8F6F1; margin-bottom: 12px; }
+.problem-text { font-size: 14px; color: rgba(248,246,241,0.45); line-height: 1.7; }
+
+/* ── HOW IT WORKS — STEPS ──────────────────────────────────── */
+#steps { padding: 120px 48px; }
+.steps-container { max-width: 960px; margin: 0 auto; }
+
+.steps-group { margin-bottom: 72px; }
+.steps-group-label {
+  font-family: var(--f-head); font-size: 12px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--blue); margin-bottom: 32px;
+  display: flex; align-items: center; gap: 12px;
+}
+.steps-group-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.steps-list { display: flex; flex-direction: column; gap: 0; position: relative; }
+.steps-list::before {
+  content: ''; position: absolute;
+  left: 23px; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, var(--blue), rgba(10,95,255,0.1));
+}
+
+.step-item {
+  display: grid; grid-template-columns: 48px 1fr;
+  gap: 24px; padding-bottom: 40px; position: relative;
+}
+.step-item:last-child { padding-bottom: 0; }
+.step-item:last-child .steps-list::before { display: none; }
+
+.step-num {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--blue); color: #fff;
+  font-family: var(--f-head); font-size: 16px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; z-index: 1; position: relative;
+  box-shadow: 0 0 0 6px var(--white);
+}
+.step-alt .step-num { background: var(--sand); color: var(--ink); }
+
+.step-body { padding-top: 10px; }
+.step-title {
+  font-family: var(--f-head); font-size: 20px; font-weight: 700;
+  color: var(--ink); margin-bottom: 8px;
+}
+.step-desc { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; }
+.step-detail {
+  background: rgba(10,95,255,0.06); border: 1px solid rgba(10,95,255,0.12);
+  border-radius: var(--radius-md); padding: 16px 20px;
+  font-size: 13px; color: var(--blue); font-weight: 500;
+  display: flex; align-items: flex-start; gap: 8px;
+}
+.step-detail::before { content: '→'; font-weight: 700; flex-shrink: 0; }
+
+/* For #steps on odd: white bg */
+#steps { background: var(--white) !important; }
+
+/* ── SCHEMA VISUAL ─────────────────────────────────────────── */
+.schema-wrap {
+  background: var(--black); border-radius: var(--radius-lg);
+  padding: 48px; margin-top: 56px; position: relative; overflow: hidden;
+}
+.schema-wrap::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 50% 80% at 30% 50%, rgba(10,95,255,0.1) 0%, transparent 60%);
+}
+.schema-title {
+  font-family: var(--f-head); font-size: 20px; font-weight: 700;
+  color: #F8F6F1; margin-bottom: 40px; position: relative;
+}
+.schema-flow {
+  display: flex; align-items: center; gap: 0;
+  overflow-x: auto; padding-bottom: 8px;
+  position: relative;
+}
+.schema-step {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 12px; min-width: 130px; flex-shrink: 0;
+}
+.schema-box {
+  width: 100px; height: 100px; border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; flex-direction: column; align-items: center;
+  justify-content: center; gap: 8px;
+  font-size: 28px; transition: all .3s;
+}
+.schema-box:hover { background: rgba(10,95,255,0.15); border-color: rgba(10,95,255,0.4); transform: translateY(-4px); }
+.schema-box-label { font-size: 10px; font-weight: 600; color: rgba(248,246,241,0.5); letter-spacing: 0.05em; }
+.schema-step-label { font-size: 11px; font-weight: 600; color: rgba(248,246,241,0.6); text-align: center; max-width: 110px; }
+.schema-arrow {
+  color: rgba(10,95,255,0.5); font-size: 22px;
+  flex-shrink: 0; margin: 0 -8px; padding-bottom: 40px;
+}
+
+/* ── FEATURES GRID ─────────────────────────────────────────── */
+#features { padding: 120px 48px; background: #F2EEE7 !important; }
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 1000px; margin: 0 auto;
+}
+.feature-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 36px 32px; border: 1px solid var(--border);
+  transition: all .3s; position: relative; overflow: hidden;
+}
+.feature-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--blue); transform: scaleX(0); transform-origin: left;
+  transition: transform .3s;
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+.feature-card:hover::before { transform: scaleX(1); }
+.feature-icon { font-size: 32px; margin-bottom: 20px; }
+.feature-title { font-family: var(--f-head); font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.feature-text { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ── AUDIENCE ──────────────────────────────────────────────── */
+#audience { padding: 120px 48px; background: var(--white) !important; }
+.audience-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  max-width: 900px; margin: 0 auto;
+}
+.audience-card {
+  border-radius: var(--radius-lg); padding: 44px 40px;
+  position: relative; overflow: hidden;
+}
+.audience-card.dark {
+  background: var(--black); color: #F8F6F1;
+}
+.audience-card.light {
+  background: var(--sand); color: var(--ink);
+}
+.audience-tag {
+  font-family: var(--f-head); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 24px; opacity: 0.6;
+}
+.audience-title {
+  font-family: var(--f-head); font-size: 30px; font-weight: 800;
+  letter-spacing: -0.03em; margin-bottom: 20px; line-height: 1;
+}
+.audience-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.audience-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; line-height: 1.5;
+}
+.audience-list li::before {
+  content: '✓'; font-weight: 700; color: var(--blue); flex-shrink: 0; margin-top: 1px;
+}
+.audience-card.light .audience-list li::before { color: var(--ink); }
+
+/* ── MARKET ────────────────────────────────────────────────── */
+#market { padding: 120px 48px; background: #F2EEE7 !important; }
+.market-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  max-width: 960px; margin: 0 auto 64px;
+}
+.market-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 36px 28px; text-align: center; border: 1px solid var(--border);
+}
+.market-num {
+  font-family: var(--f-head); font-size: 42px; font-weight: 800;
+  color: var(--ink); letter-spacing: -0.04em;
+}
+.market-num span { color: var(--blue); }
+.market-label { font-size: 13px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+
+/* ── ROADMAP ───────────────────────────────────────────────── */
+#roadmap { padding: 120px 48px; background: var(--black) !important; }
+#roadmap .section-title { color: #F8F6F1; }
+#roadmap .section-sub { color: rgba(248,246,241,0.4); }
+#roadmap .label { color: rgba(61,127,255,0.9); }
+
+.roadmap-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  max-width: 960px; margin: 0 auto;
+}
+.roadmap-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg); padding: 36px 32px;
+}
+.roadmap-version {
+  font-family: var(--f-head); font-size: 13px; font-weight: 700;
+  color: var(--blue-lt); margin-bottom: 8px;
+}
+.roadmap-title {
+  font-family: var(--f-head); font-size: 22px; font-weight: 700;
+  color: #F8F6F1; margin-bottom: 6px;
+}
+.roadmap-when { font-size: 12px; color: rgba(248,246,241,0.3); margin-bottom: 24px; }
+.roadmap-items { display: flex; flex-direction: column; gap: 8px; }
+.roadmap-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: rgba(248,246,241,0.6);
+}
+.roadmap-item::before { content: '→'; color: rgba(10,95,255,0.6); font-weight: 700; flex-shrink: 0; }
+.roadmap-card.current { border-color: rgba(10,95,255,0.4); background: rgba(10,95,255,0.07); }
+.roadmap-card.current .roadmap-version::after { content: ' — Disponible'; }
+
+/* ── CTA FINAL ─────────────────────────────────────────────── */
+#cta {
+  padding: 140px 48px;
+  background: var(--blue) !important;
+  text-align: center; position: relative; overflow: hidden;
+}
+#cta::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0,0,0,0.1) 0%, transparent 50%);
+}
+.cta-title {
+  font-family: var(--f-head);
+  font-size: clamp(40px, 5vw, 72px); font-weight: 800;
+  color: #fff; letter-spacing: -0.04em; line-height: .95;
+  position: relative; margin-bottom: 24px;
+}
+.cta-sub { font-size: 18px; color: rgba(255,255,255,0.7); position: relative; margin-bottom: 48px; }
+.cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; position: relative; }
+.btn-white {
+  background: #fff; color: var(--blue);
+  padding: 18px 40px; border-radius: var(--radius-xl);
+  font-family: var(--f-body); font-size: 16px; font-weight: 600;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+.btn-white-outline {
+  background: transparent; color: rgba(255,255,255,0.85);
+  padding: 18px 40px; border-radius: var(--radius-xl);
+  font-family: var(--f-body); font-size: 16px; font-weight: 500;
+  border: 2px solid rgba(255,255,255,0.3); cursor: pointer; text-decoration: none;
+  transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-white-outline:hover { border-color: rgba(255,255,255,0.7); color: #fff; }
+
+/* ── FOOTER ────────────────────────────────────────────────── */
+footer {
+  background: var(--black); padding: 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo {
+  font-family: var(--f-head); font-size: 20px; font-weight: 800;
+  color: #F8F6F1; letter-spacing: -0.02em;
+}
+.footer-logo span { color: var(--blue-lt); }
+.footer-text { font-size: 13px; color: rgba(248,246,241,0.3); }
+
+/* ── ANIMATIONS ────────────────────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; padding: 120px 24px 64px; gap: 48px; }
+  .hero-phone { order: -1; }
+  .phone-frame { width: 240px; height: 480px; }
+  #problem, #steps, #features, #audience, #market, #roadmap, #cta, footer { padding-left: 24px; padding-right: 24px; }
+  .problem-grid, .features-grid, .roadmap-row { grid-template-columns: 1fr; }
+  .audience-grid, .market-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stats { flex-wrap: wrap; gap: 24px; }
+  .schema-flow { gap: 0; }
+}
+@media (max-width: 600px) {
+  .audience-grid, .market-grid { grid-template-columns: 1fr; }
+  .schema-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yaawo<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#problem">Problème</a></li>
+    <li><a href="#steps">Comment ça marche</a></li>
+    <li><a href="#features">Fonctionnalités</a></li>
+    <li><a href="#market">Marché</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Télécharger</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+
+  <div class="hero-text fade-in">
+    <div class="hero-badge">Disponible maintenant · Niamey, Niger</div>
+    <h1 class="hero-title">
+      Explorer<br>
+      Niamey<br>
+      <span class="accent">autrement.</span>
+    </h1>
+    <p class="hero-subtitle">
+      Yaawo connecte les habitants de Niamey avec les lieux essentiels et les taxis — en temps réel, en français, hors-ligne.
+    </p>
+    <div class="hero-actions">
+      <a href="#steps" class="btn-primary">Découvrir l'app →</a>
+      <a href="#audience" class="btn-outline">Pour qui ?</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">10<span>+</span></div>
+        <div class="hero-stat-label">Lieux référencés</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5<span>+</span></div>
+        <div class="hero-stat-label">Taxis connectés</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100<span>%</span></div>
+        <div class="hero-stat-label">Offline-first</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-phone fade-in" style="transition-delay:.2s">
+    <div class="phone-glow"></div>
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="phone-screen">
+        <div class="phone-map">
+          <div class="phone-map-roads"></div>
+          <div class="phone-user"></div>
+          <div class="phone-pin blue"><div class="phone-pin-dot"></div></div>
+          <div class="phone-pin green"><div class="phone-pin-dot"></div></div>
+          <div class="phone-pin red"><div class="phone-pin-dot"></div></div>
+        </div>
+        <div class="phone-content">
+          <div class="phone-cta">
+            <div class="phone-cta-icon">🚕</div>
+            <div>
+              <div class="phone-cta-t1">Où allons-nous ?</div>
+              <div class="phone-cta-t2">Taxi à la demande</div>
+            </div>
+          </div>
+          <div class="phone-places">
+            <div class="phone-place">
+              <div class="phone-place-bar" style="background:#007AFF"></div>
+              <div>
+                <div class="phone-place-name">Musée National</div>
+                <div class="phone-place-type">Lieu symbolique</div>
+              </div>
+            </div>
+            <div class="phone-place">
+              <div class="phone-place-bar" style="background:#FF3B30"></div>
+              <div>
+                <div class="phone-place-name">Hôpital National</div>
+                <div class="phone-place-type">Hopital · 1.2 km</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="phone-tab-bar">
+          <div class="phone-tab active">
+            <div class="phone-tab-icon">🏠</div>
+            <div class="phone-tab-label" style="color:#3D7FFF">Accueil</div>
+          </div>
+          <div class="phone-tab">
+            <div class="phone-tab-icon">🚗</div>
+            <div class="phone-tab-label">Taxi</div>
+          </div>
+          <div class="phone-tab">
+            <div class="phone-tab-icon">🗺️</div>
+            <div class="phone-tab-label">Carte</div>
+          </div>
+          <div class="phone-tab">
+            <div class="phone-tab-icon">⏱️</div>
+            <div class="phone-tab-label">Historique</div>
+          </div>
+          <div class="phone-tab">
+            <div class="phone-tab-icon">⚙️</div>
+            <div class="phone-tab-label">Réglages</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div style="max-width:900px; margin:0 auto; text-align:center; padding:0 24px">
+    <div class="label fade-in">Le Problème</div>
+    <h2 class="section-title fade-in" style="color:#F8F6F1">Niamey mérite mieux.</h2>
+    <p class="section-sub fade-in">1,5 million d'habitants. Aucune application locale pensée pour leurs besoins réels.</p>
+  </div>
+  <div class="container" style="margin-top:56px">
+    <div class="problem-grid">
+      <div class="problem-card fade-in">
+        <div class="problem-icon">🗺️</div>
+        <div class="problem-num">01</div>
+        <div class="problem-title">Pas de carte locale</div>
+        <div class="problem-text">Google Maps existe mais les données nigériennes sont incomplètes, mal nommées, et l'interface n'est pas pensée pour ce contexte.</div>
+      </div>
+      <div class="problem-card fade-in" style="transition-delay:.1s">
+        <div class="problem-icon">🚕</div>
+        <div class="problem-num">02</div>
+        <div class="problem-title">Taxis sans système digital</div>
+        <div class="problem-text">~10 000 taxis informels à Niamey. Aucune application de commande. Pas de traçabilité. Pas de confirmation de course.</div>
+      </div>
+      <div class="problem-card fade-in" style="transition-delay:.2s">
+        <div class="problem-icon">📡</div>
+        <div class="problem-num">03</div>
+        <div class="problem-title">Connectivité faible</div>
+        <div class="problem-text">Les apps existantes nécessitent un réseau stable. En Afrique de l'Ouest, la connectivité est intermittente. Il faut une vraie solution offline-first.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section id="steps">
+  <div class="container">
+    <div class="section-header">
+      <div class="label fade-in">Comment ça marche</div>
+      <h2 class="section-title fade-in">De zéro à l'exploration<br>en 3 minutes.</h2>
+      <p class="section-sub fade-in">Deux parcours : utilisateur ordinaire ou chauffeur taxi. Chaque étape est conçue pour être simple et rapide.</p>
+    </div>
+
+    <div class="steps-container">
+      <!-- GROUPE 1 -->
+      <div class="steps-group fade-in">
+        <div class="steps-group-label">👤 Parcours Utilisateur / Résident</div>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <div class="step-title">Créer un compte</div>
+              <div class="step-desc">Entrez votre numéro de téléphone nigérien (+227) et choisissez un code PIN à 4 chiffres. Aucune adresse e-mail requise.</div>
+              <div class="step-detail">Numéro de téléphone + PIN 4 chiffres → Compte créé en moins de 30 secondes</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <div class="step-title">Activer la localisation GPS</div>
+              <div class="step-desc">L'application demande l'accès à votre position. Ce n'est pas obligatoire, mais permet la détection automatique des lieux proches.</div>
+              <div class="step-detail">Rayon adaptatif : 20m à pied · 50m en voiture · 100m rapide</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <div class="step-title">Explorer la carte de Niamey</div>
+              <div class="step-desc">La carte OpenStreetMap s'affiche immédiatement avec les lieux emblématiques visible par défaut (monuments, marchés, musées).</div>
+              <div class="step-detail">Pincer/zoomer · Taper un marqueur pour voir les détails · Filtrer par type</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <div class="step-title">Recevoir les annonces vocales</div>
+              <div class="step-desc">Lorsque vous approchez d'un lieu référencé, l'application l'annonce vocalement en français avec le nom et la description.</div>
+              <div class="step-detail">Activez/désactivez avec le bouton volume · Fonctionne même en arrière-plan</div>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <div class="step-title">Commander un taxi</div>
+              <div class="step-desc">Depuis n'importe quel écran, tapez « Où allons-nous ? », choisissez votre destination, et confirmez. Le taxi le plus proche est assigné automatiquement.</div>
+              <div class="step-detail">Confirmation par alerte · Numéro du chauffeur affiché · Historique des courses conservé</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GROUPE 2 -->
+      <div class="steps-group fade-in">
+        <div class="steps-group-label">🚕 Parcours Chauffeur Taxi</div>
+        <div class="steps-list">
+          <div class="step-item step-alt">
+            <div class="step-num" style="background:var(--sand);color:var(--ink)">1</div>
+            <div class="step-body">
+              <div class="step-title">Inscription comme chauffeur</div>
+              <div class="step-desc">Renseignez votre numéro de téléphone, votre nom et votre zone de circulation habituelle. Votre profil est créé localement.</div>
+              <div class="step-detail">Nom + Téléphone + Zone principale → Visible dans l'app client</div>
+            </div>
+          </div>
+          <div class="step-item step-alt">
+            <div class="step-num" style="background:var(--sand);color:var(--ink)">2</div>
+            <div class="step-body">
+              <div class="step-title">Activation & disponibilité</div>
+              <div class="step-desc">Passez en mode « actif » pour apparaître sur la carte des clients. Votre position est mise à jour toutes les 5 secondes.</div>
+              <div class="step-detail">Bouton On/Off · Votre distance apparaît chez le client</div>
+            </div>
+          </div>
+          <div class="step-item step-alt">
+            <div class="step-num" style="background:var(--sand);color:var(--ink)">3</div>
+            <div class="step-body">
+              <div class="step-title">Recevoir les demandes</div>
+              <div class="step-desc">Quand un client demande un taxi, une notification s'affiche avec sa position et sa destination. Acceptez ou refusez en un tap.</div>
+              <div class="step-detail">Alerte push + SMS de confirmation automatique au client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schéma flux -->
+      <div class="schema-wrap fade-in">
+        <div class="schema-title">Flux complet d'une course</div>
+        <div class="schema-flow">
+          <div class="schema-step">
+            <div class="schema-box">
+              <span>📱</span>
+              <span class="schema-box-label">Ouvre l'app</span>
+            </div>
+            <div class="schema-step-label">Client ouvre Yaawo</div>
+          </div>
+          <div class="schema-arrow">→</div>
+          <div class="schema-step">
+            <div class="schema-box">
+              <span>📍</span>
+              <span class="schema-box-label">GPS actif</span>
+            </div>
+            <div class="schema-step-label">Position détectée</div>
+          </div>
+          <div class="schema-arrow">→</div>
+          <div class="schema-step">
+            <div class="schema-box">
+              <span>🗺️</span>
+              <span class="schema-box-label">Carte</span>
+            </div>
+            <div class="schema-step-label">Lieux visibles sur la carte</div>
+          </div>
+          <div class="schema-arrow">→</div>
+          <div class="schema-step">
+            <div class="schema-box">
+              <span>🚕</span>
+              <span class="schema-box-label">Taxi CTA</span>
+            </div>
+            <div class="schema-step-label">« Où allons-nous ? »</div>
+          </div>
+          <div class="schema-arrow">→</div>
+          <div class="schema-step">
+            <div class="schema-box">
+              <span>✅</span>
+              <span class="schema-box-label">Assigné</span>
+            </div>
+            <div class="schema-step-label">Taxi le plus proche notifié</div>
+          </div>
+          <div class="schema-arrow">→</div>
+          <div class="schema-step">
+            <div class="schema-box">
+              <span>📞</span>
+              <span class="schema-box-label">Contact</span>
+            </div>
+            <div class="schema-step-label">Numéro chauffeur affiché</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="label fade-in">Fonctionnalités</div>
+      <h2 class="section-title fade-in">Tout ce dont vous<br>avez besoin.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🗺️</div>
+        <div class="feature-title">Carte OpenStreetMap</div>
+        <div class="feature-text">Carte complète de Niamey, gratuite, sans abonnement. Markers interactifs par type de lieu. Fonctionne en 3G comme en WiFi.</div>
+      </div>
+      <div class="feature-card fade-in" style="transition-delay:.08s">
+        <div class="feature-icon">🔊</div>
+        <div class="feature-title">Guidage vocal</div>
+        <div class="feature-text">Annonce automatique des lieux proches en français. Rayon adaptatif selon votre vitesse de déplacement.</div>
+      </div>
+      <div class="feature-card fade-in" style="transition-delay:.16s">
+        <div class="feature-icon">🚕</div>
+        <div class="feature-title">Taxi à la demande</div>
+        <div class="feature-text">Commande en 2 clics. Le chauffeur le plus proche est assigné. Confirmation SMS automatique.</div>
+      </div>
+      <div class="feature-card fade-in" style="transition-delay:.24s">
+        <div class="feature-icon">📴</div>
+        <div class="feature-title">Offline-first</div>
+        <div class="feature-text">SQLite embarqué : toutes les données sont stockées localement. L'app fonctionne sans internet. Synchronisation Supabase cloud quand disponible.</div>
+      </div>
+      <div class="feature-card fade-in" style="transition-delay:.32s">
+        <div class="feature-icon">⭐</div>
+        <div class="feature-title">Notation des lieux</div>
+        <div class="feature-text">Évaluez chaque lieu sur 5 étoiles. Les notes sont partagées avec la communauté via Supabase.</div>
+      </div>
+      <div class="feature-card fade-in" style="transition-delay:.40s">
+        <div class="feature-icon">🔐</div>
+        <div class="feature-title">Compte sécurisé</div>
+        <div class="feature-text">Inscription avec numéro de téléphone (+227) et PIN à 4 chiffres. Aucun e-mail requis. Authentification locale, rapide, adaptée à l'usage africain.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <div class="container">
+    <div class="section-header">
+      <div class="label fade-in">Pour qui ?</div>
+      <h2 class="section-title fade-in">Deux usages,<br>une seule app.</h2>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card dark fade-in">
+        <div class="audience-tag">Utilisateur</div>
+        <div class="audience-title">Résident · Visiteur · Expatrié</div>
+        <ul class="audience-list">
+          <li>Trouver hôpital, pharmacie ou station rapidement</li>
+          <li>Commander un taxi sans négociation</li>
+          <li>Découvrir les lieux emblématiques de Niamey</li>
+          <li>Recevoir des alertes vocales de proximité</li>
+          <li>Fonctionner sans connexion internet stable</li>
+        </ul>
+      </div>
+      <div class="audience-card light fade-in" style="transition-delay:.1s">
+        <div class="audience-tag">Professionnel</div>
+        <div class="audience-title">ONG · Hôtels · Agences de voyage</div>
+        <ul class="audience-list">
+          <li>Donner à vos équipes un outil de navigation local</li>
+          <li>Coordonner les déplacements terrain en zones à faible connectivité</li>
+          <li>Référencer votre établissement dans l'app</li>
+          <li>Accéder aux données de déplacements via l'API Supabase</li>
+          <li>Déploiement rapide, zéro infrastructure requise</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKET -->
+<section id="market">
+  <div class="container">
+    <div class="section-header">
+      <div class="label fade-in">Le Marché</div>
+      <h2 class="section-title fade-in">Un continent<br>mobile-first.</h2>
+      <p class="section-sub fade-in">L'Afrique de l'Ouest est le marché à plus forte croissance d'adoption mobile au monde. Niamey est le point de départ.</p>
+    </div>
+    <div class="market-grid">
+      <div class="market-card fade-in">
+        <div class="market-num">1<span>.5M</span></div>
+        <div class="market-label">Habitants à Niamey</div>
+      </div>
+      <div class="market-card fade-in" style="transition-delay:.08s">
+        <div class="market-num">10<span>k+</span></div>
+        <div class="market-label">Taxis informels à connecter</div>
+      </div>
+      <div class="market-card fade-in" style="transition-delay:.16s">
+        <div class="market-num">0<span>€</span></div>
+        <div class="market-label">Concurrents locaux directs</div>
+      </div>
+      <div class="market-card fade-in" style="transition-delay:.24s">
+        <div class="market-num">5<span>+</span></div>
+        <div class="market-label">Pays cibles en extension</div>
+      </div>
+    </div>
+    <div style="max-width:640px; margin:0 auto; text-align:center">
+      <p class="fade-in" style="font-size:15px; color:var(--muted); line-height:1.7">
+        Extension naturelle vers <strong>Burkina Faso, Mali, Mauritanie, Tchad</strong> — même contexte linguistique francophone, même manque de solutions locales, même adoption mobile forte.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div style="max-width:960px; margin:0 auto; padding:0 24px">
+    <div class="section-header">
+      <div class="label fade-in">Roadmap</div>
+      <h2 class="section-title fade-in" style="color:#F8F6F1">De l'utile<br>à l'indispensable.</h2>
+    </div>
+    <div class="roadmap-row">
+      <div class="roadmap-card current fade-in">
+        <div class="roadmap-version">v1.0</div>
+        <div class="roadmap-title">Fondations</div>
+        <div class="roadmap-when">✅ Disponible maintenant</div>
+        <div class="roadmap-items">
+          <div class="roadmap-item">Carte OpenStreetMap de Niamey</div>
+          <div class="roadmap-item">Guidage vocal automatique</div>
+          <div class="roadmap-item">Taxi à la demande (SMS)</div>
+          <div class="roadmap-item">Compte téléphone + PIN 4 digits</div>
+          <div class="roadmap-item">SQLite offline-first + Supabase</div>
+          <div class="roadmap-item">Notation des lieux</div>
+        </div>
+      </div>
+      <div class="roadmap-card fade-in" style="transition-delay:.1s">
+        <div class="roadmap-version">v2.0</div>
+        <div class="roadmap-title">Temps Réel</div>
+        <div class="roadmap-when">→ Dans 3 mois</div>
+        <div class="roadmap-items">
+          <div class="roadmap-item">Tracking taxi en direct (WebSocket)</div>
+          <div class="roadmap-item">Statut course live</div>
+          <div class="roadmap-item">Intégration Mobile Money Niger</div>
+          <div class="roadmap-item">Push notifications</div>
+          <div class="roadmap-item">Favoris & profil utilisateur</div>
+          <div class="roadmap-item">Itinéraire turn-by-turn</div>
+        </div>
+      </div>
+      <div class="roadmap-card fade-in" style="transition-delay:.2s">
+        <div class="roadmap-version">v3.0</div>
+        <div class="roadmap-title">Plateforme</div>
+        <div class="roadmap-when">→ Dans 6 mois</div>
+        <div class="roadmap-items">
+          <div class="roadmap-item">API ouverte pour partenaires</div>
+          <div class="roadmap-item">Dashboard opérateur taxi (web)</div>
+          <div class="roadmap-item">Version Djerma + Haoussa</div>
+          <div class="roadmap-item">Expansion Burkina Faso / Mali</div>
+          <div class="roadmap-item">Mode SMS-only (zéro data)</div>
+          <div class="roadmap-item">WhatsApp Business API</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <h2 class="cta-title fade-in">Rejoignez Yaawo.<br>Niamey vous attend.</h2>
+  <p class="cta-sub fade-in">Application gratuite. Aucun abonnement. Fonctionne sans internet.</p>
+  <div class="cta-actions fade-in">
+    <a href="#" class="btn-white">📱 Télécharger l'app →</a>
+    <a href="mailto:contact@yaawo.app" class="btn-white-outline">✉️ Contacter l'équipe</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Yaawo<span>.</span></div>
+  <div class="footer-text">© 2025 Yaawo · Niamey, Niger · Fait avec ❤️</div>
+  <div class="footer-text">contact@yaawo.app</div>
+</footer>
+
+<script>
+// Intersection Observer for fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Smooth phone animation
+const pins = document.querySelectorAll('.phone-pin');
+let t = 0;
+setInterval(() => {
+  t += 0.5;
+  pins.forEach((pin, i) => {
+    const offset = Math.sin(t + i * 1.2) * 3;
+    pin.style.transform = `translateY(${offset}px)`;
+  });
+}, 50);
+</script>
+</body>
+</html>
